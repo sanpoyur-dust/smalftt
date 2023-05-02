@@ -1,0 +1,11 @@
+[versions]
+dokka = "1.8.10"
+kotlin = "1.8.20"
+kotest = "5.6.1"
+
+[libraries]
+kotest-runner-junit5 = { group = "io.kotest", name = "kotest-runner-junit5", version.ref = "kotest" }
+
+[plugins]
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
