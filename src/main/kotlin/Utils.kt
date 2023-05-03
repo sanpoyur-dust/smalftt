@@ -1,4 +1,4 @@
-package org.yurusanp.smallfontt
+package org.yurusanp.smalftt
 
 // term with a binder, i.e., a family of terms
 // x . b

@@ -1,1 +1,1 @@
-rootProject.name = "smallfontt"
+rootProject.name = "smalftt"

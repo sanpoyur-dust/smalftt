@@ -1,4 +1,4 @@
-package org.yurusanp.smallfontt
+package org.yurusanp.smalftt
 
 // the evaluation part of normalization
 fun eval(env: Env, term: Term): Value = when (term) {

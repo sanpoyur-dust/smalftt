@@ -1,4 +1,4 @@
-package org.yurusanp.smallfontt
+package org.yurusanp.smalftt
 
 // semantic domain satisfying:
 // if t1 = t2 then eval(t1) = eval(t2)

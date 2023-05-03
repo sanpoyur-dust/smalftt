@@ -1,4 +1,4 @@
-package org.yurusanp.smallfontt
+package org.yurusanp.smalftt
 
 // well-typed term
 sealed interface Term {
