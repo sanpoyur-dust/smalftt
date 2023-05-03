@@ -1,6 +1,6 @@
 package org.yurusanp.smallfontt
 
-// normalization by evaluation
+// the evaluation part of normalization
 fun eval(env: Env, term: Term): Value = when (term) {
   is Term.Var -> env.proj(term.ix)
 
@@ -25,8 +25,8 @@ fun eval(env: Env, term: Term): Value = when (term) {
     Value.Pair(vFst, vSnd)
   }
 
-  // we never do any reduction since deep substitutions are expensive
-  // we only extend the env when reduction is possible
+  // we don't do the substitution here since deep substitutions are expensive
+  // we only extend the env for later look up
 
   is Term.App -> {
     val (lam, arg) = term

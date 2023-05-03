@@ -26,10 +26,9 @@ typealias Lv = Nat
 
 // closure of a term with a binder
 // Γ, x : A ⊢ b : B
-// the purpose is to avoid actually doing expensive substitution
 data class Cls(val env: Env, val fam: Fam)
 
-// for each (z : C) in Γ, the normalized value of z is in the env
+// for each (z : C) in Γ, the value of z is in the env
 sealed interface Env {
   data object Emp: Env
   data class Ext(val env: Env, val v: Value): Env
