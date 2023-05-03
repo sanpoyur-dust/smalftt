@@ -5,11 +5,11 @@ sealed interface Term {
   // variable
   data class Var(val ix: Ix) : Term
 
-  // dependent function, Pi type
+  // dependent function (product) type, Pi type
   // Π (x : dom) . b[x]
   data class Pi(val dom: Term, val fam: Fam) : Term
 
-  // dependent pair, Sigma type
+  // dependent pair (co-product) type, Sigma type
   // Σ (x : dom) . b[x]
   data class Sg(val dom: Term, val fam: Fam) : Term
 

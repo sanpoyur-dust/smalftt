@@ -1,5 +1,6 @@
 package org.yurusanp.smallfontt
 
+// normalization by evaluation
 fun eval(env: Env, term: Term): Value = when (term) {
   is Term.Var -> env.proj(term.ix)
 
