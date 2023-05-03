@@ -92,7 +92,7 @@ fun fst(vPair: Value): Value = when (vPair) {
     Value.Stuck(nFst, vDom)
   }
 
-  else -> throw IllegalArgumentException("Expected a value of Pi type. Got $vPair")
+  else -> throw IllegalArgumentException("Expected a value of Sigma type. Got $vPair")
 }
 
 fun snd(vPair: Value): Value = when (vPair) {
@@ -119,5 +119,5 @@ fun snd(vPair: Value): Value = when (vPair) {
     Value.Stuck(nSnd, fiber)
   }
 
-  else -> throw IllegalArgumentException("Expected a value of Pi type. Got $vPair")
+  else -> throw IllegalArgumentException("Expected a value of Sigma type. Got $vPair")
 }
