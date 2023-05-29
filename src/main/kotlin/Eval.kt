@@ -58,7 +58,7 @@ fun app(vLam: Value, vArg: Value): Value = when (vLam) {
     val (nLam, pi) = vLam
 
     // vLam : Π (x : vDom) . b[x]
-    if (pi !is Value.Pi) throw IllegalArgumentException("Expected a value of Pi type. Got $nLam: $pi")
+    if (pi !is Value.Pi) error("Expected a value of Pi type. Got $nLam: $pi")
     val (vDom, cls) = pi
 
     val nApp = Neutral.App(nLam, vArg, vDom)
@@ -71,7 +71,7 @@ fun app(vLam: Value, vArg: Value): Value = when (vLam) {
     Value.Stuck(nApp, fiber)
   }
 
-  else -> throw IllegalArgumentException("Expected a value of Pi type. Got $vLam")
+  else -> error("Expected a value of Pi type. Got $vLam")
 }
 
 fun fst(vPair: Value): Value = when (vPair) {
@@ -84,7 +84,7 @@ fun fst(vPair: Value): Value = when (vPair) {
     val (nPair, sg) = vPair
 
     // vPair : Σ (x : vDom) . b[x]
-    if (sg !is Value.Sg) throw IllegalArgumentException("Expected a value of Sigma type. Got $nPair: $sg")
+    if (sg !is Value.Sg) error("Expected a value of Sigma type. Got $nPair: $sg")
     val (vDom, _) = sg
 
     val nFst = Neutral.Fst(nPair)
@@ -92,7 +92,7 @@ fun fst(vPair: Value): Value = when (vPair) {
     Value.Stuck(nFst, vDom)
   }
 
-  else -> throw IllegalArgumentException("Expected a value of Sigma type. Got $vPair")
+  else -> error("Expected a value of Sigma type. Got $vPair")
 }
 
 fun snd(vPair: Value): Value = when (vPair) {
@@ -105,7 +105,7 @@ fun snd(vPair: Value): Value = when (vPair) {
     val (nPair, sg) = vPair
 
     // vPair : Σ (x : _) . b[x]
-    if (sg !is Value.Sg) throw IllegalArgumentException("Expected a value of Sigma type. Got $nPair: $sg")
+    if (sg !is Value.Sg) error("Expected a value of Sigma type. Got $nPair: $sg")
     val (_, cls) = sg
 
     val nSnd = Neutral.Snd(nPair)
@@ -119,5 +119,5 @@ fun snd(vPair: Value): Value = when (vPair) {
     Value.Stuck(nSnd, fiber)
   }
 
-  else -> throw IllegalArgumentException("Expected a value of Sigma type. Got $vPair")
+  else -> error("Expected a value of Sigma type. Got $vPair")
 }

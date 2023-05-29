@@ -1,21 +1,16 @@
 plugins {
   idea
-  `java-library`
   alias(libs.plugins.kotlin.jvm)
   alias(libs.plugins.dokka)
 }
 
 allprojects {
   group = "org.yurusanp"
-  version = "0.1-SNAPSHOT"
+  version = "0.1.0" + "-SNAPSHOT"
 
   repositories {
     mavenCentral()
   }
-}
-
-dependencies {
-  testImplementation(libs.kotest.runner.junit5)
 }
 
 kotlin {
@@ -25,6 +20,10 @@ kotlin {
       languageVersion = "2.0"
     }
   }
+}
+
+dependencies {
+  testImplementation(rootProject.libs.kotest.runner.junit5)
 }
 
 tasks.withType<Test>().configureEach {
