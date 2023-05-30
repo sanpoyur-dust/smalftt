@@ -45,7 +45,7 @@ fun eval(env: Env, term: Term): Value = when (term) {
     snd(vPair)
   }
 
-  is Term.Univ -> TODO()
+  else -> TODO()
 }
 
 fun app(vLam: Value, vArg: Value): Value = when (vLam) {
