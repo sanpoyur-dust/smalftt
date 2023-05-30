@@ -26,6 +26,6 @@ sealed interface Neutral {
   data class App(val nLam: Neutral, val vArg: Value, val vDom: Value) : Neutral
   data class Fst(val nPair: Neutral) : Neutral
   data class Snd(val nPair: Neutral) : Neutral
-  data class UnitInd(val nScrut: Neutral, val clsMot: Fam, val vCaseU: Value) : Neutral
-  data class BoolInd(val nScrut: Neutral, val clsMot: Fam, val vCaseT: Value, val vCaseF: Value) : Neutral
+  data class UnitInd(val nScrut: Neutral, val clsMot: Cls, val vCaseU: Value) : Neutral
+  data class BoolInd(val nScrut: Neutral, val clsMot: Cls, val vCaseT: Value, val vCaseF: Value) : Neutral
 }
